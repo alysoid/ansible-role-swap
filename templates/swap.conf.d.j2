@@ -1,0 +1,8 @@
+# {{ ansible_managed }}
+# See swap.conf(5) for details.
+
+{% for option in item.value %}
+{% for key, value in option.items() %}
+{{ key }}={{ value }}
+{% endfor %}
+{% endfor %}
