@@ -7,7 +7,7 @@
 | Variable               | Default  | Info
 | ---------------------- | -------- | ------------
 | `systemd_swap_cleanup` | `no`     | Remove existing configuration files from `/etc/systemd/swap.conf.d/*.conf`.
-| `systemd_swap_conf_d`  | `[]`     | Create custom configuration files in `/etc/systemd/swap.conf.d/*.conf`
+| `systemd_swap_conf_d`  | `{}`     | Create custom configuration files in `/etc/systemd/swap.conf.d/*.conf`
 
 ---
 

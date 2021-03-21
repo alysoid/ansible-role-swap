@@ -1,2 +1,2 @@
 systemd_swap_cleanup: no
-systemd_swap_conf_d: []
+systemd_swap_conf_d: {}
