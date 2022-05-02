@@ -1,37 +1,24 @@
 ---
-dependencies: []
-
 galaxy_info:
   author: Andrea Brandi
-  description: Create hybrid swap space from zram swaps, swap files and swap partitions using systemd-swap.
+  description: Create hybrid swap space from zram swaps, swap files and swap partitions using systemd-swap
   license: MIT
-  min_ansible_version: 2.9
+
+  min_ansible_version: 2.1
+
   platforms:
-  - name: ArchLinux
-    versions:
-    - all
-  - name: Debian
-    versions:
-    - jessie
-    - stretch
-    - buster
-  - name: EL
-    versions:
-    - 7
-    - 8
-  - name: Fedora
-    versions:
-    - 30
-    - 31
-    - 32
-  - name: Ubuntu
-    versions:
-    - xenial
-    - bionic
-    - focal
+    - name: ArchLinux
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+
   galaxy_tags:
     - system
     - systemd
     - swap
     - zram
     - zswap
+
+dependencies: []
