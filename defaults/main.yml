@@ -1,3 +1,7 @@
 ---
-systemd_swap_cleanup: no
-systemd_swap_conf_d: []
+# Manage systemd-swap configuration files
+# https://man.archlinux.org/man/swap.conf.5
+systemd_swap: []
+
+# Remove all existing configuration files when true
+systemd_swap_cleanup: false
