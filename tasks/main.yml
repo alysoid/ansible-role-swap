@@ -27,5 +27,7 @@
     dest: "/etc/systemd/swap.conf.d/{{ item.key }}.conf"
     owner: root
     mode: "0644"
-  loop: "{{ systemd_swap_conf_d | dict2items }}"
+  vars:
+    - current_item: "{{ item.options }}"
+  loop: "{{ systemd_swap }}"
   notify: Restart systemd-swap
