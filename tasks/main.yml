@@ -1,19 +1,20 @@
 ---
 - name: Create swap.conf.d directory
-  file:
+  ansible.builtin.file:
     path: /etc/systemd/swap.conf.d
     state: directory
-    mode: '0755'
+    owner: root
+    mode: "0755"
 
 - name: Check existing configuration files
-  find:
+  ansible.builtin.find:
     paths: /etc/systemd/swap.conf.d
-    patterns: '*.conf'
+    patterns: "*.conf"
   when: systemd_swap_cleanup
   register: existing_config
 
 - name: Remove existing configuration files
-  file:
+  ansible.builtin.file:
     path: "{{ item.path }}"
     state: absent
   loop: "{{ existing_config.files }}"
@@ -21,10 +22,10 @@
   notify: Restart systemd-swap
 
 - name: Generate configuration files
-  template:
+  ansible.builtin.template:
     src: swap.conf.d.j2
     dest: "/etc/systemd/swap.conf.d/{{ item.key }}.conf"
     owner: root
-    mode: '0644'
+    mode: "0644"
   loop: "{{ systemd_swap_conf_d | dict2items }}"
   notify: Restart systemd-swap

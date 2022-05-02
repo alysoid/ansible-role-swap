@@ -1,5 +1,5 @@
 ---
 - name: Restart systemd-swap
-  service:
+  ansible.builtin.service:
     name: systemd-swap
     state: restarted
